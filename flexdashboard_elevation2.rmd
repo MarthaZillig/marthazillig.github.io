@@ -27,17 +27,16 @@ Row {data-height=350}
 
 #### Background
 
-The Great Basin is home to over 300 species of breeding birds. My lab group has been surveying sites in the Great Basin since 2001. We have collected data on avian occupancy and abundance, vegetation, nest sites, and more recently for my dissertation work microclimate and insect biomass. Because we visit each location three times per season and survey for birds, I was able to create models that examined how the avian community changes throughout the breeding season. Check out the Map tab to look at our sites! 
+The Great Basin is home to over 300 species of breeding birds. My lab group has been surveying sites in the Great Basin since 2001. We have collected data on avian occupancy and abundance, vegetation, nest sites, and more recently during my dissertation work microclimate and insect biomass. Because we visit each location three times per season and survey for birds, I was able to create models that examined how the avian community changes throughout the breeding season. Check out the Map tab to look at our sites! 
 
 #### Within-season dispersal
 
-A dominant paradigm in ornithology is that birds arrive on their breeding grounds, establish a territory, and remain there until it is time to molt or migrate. However, during my five field seasons in the Great Basin I started to notice that for some species, something else might be going on. I consistently saw some species of birds at lower elevations in the beginning of the breeding season, and higher elevations later in the breeding season. Are some species switching territories during their breeding season? Why are some species moving and others not? Why might within season movement occur? I decided to build some models that would help answer those questions. Check out the Within-Season Dispersal tab for more info on this project. 
+A dominant paradigm in ornithology is that birds arrive on their breeding grounds, establish a territory, and remain there until it is time to molt or migrate. However, during my five field seasons in the Great Basin I started to notice that for some species, within season movement seemed to be occurring. I consistently saw some species of birds at lower elevations in the beginning of the breeding season, and higher elevations later in the breeding season. Are some species switching territories during their breeding season? Why are some species moving and others not? What might be driving movement within a breeding season? I decided to build some models that would help answer those questions. Check out the Within-Season Dispersal tab for more info on this project. 
 
 #### Elevation Range Shifts 
 
-How do birds respond to climate change? Because birds are a highly vagile species, it is thought that one of the main ways bird are responding is through movement to more suitable habitats. Is climate change driving avian movements at our Great Basin sites? 
+One way that birds might respond to climate change is through upslope elevational movement. Because temperature generally decreases as elevation increases, it is hypothesized that organisms will move upslope in response to warming temperatures. There is evidence that this is happening in a diversity of taxanomic groups (see Chen et al. 2011 for a review), and I wanted to understand if birds in montane environments in the Great Basin might be moving elevationally. As our lab group has data on avian abundance since 2001, I was able to construct statistical models that would answer this question. More info on the results of this work forthcoming! 
 
-This project aims to examine if elevational range shifts, or perhaps more accurately population-level shifts, are occurring at our Great Basin sites. Because we have a long term data set going back to 2002, I will be able to determine if species of birds have shifted elevationally in response to increasing temperature or changing precipitation regimes in a ~20 year period. If climate change is responsible for shifting species' ranges, it could have big consequences for conservation of these species into the future. 
 
 #### Data Collection
 
@@ -48,9 +47,9 @@ What sort of data are we collecting to answer these questions? All sorts!
   + Nest sites for specific species (dissertation work of Frank Fogarty)
   + Microclimate using HOBO data loggers
   + Insect biomass using sticky traps and malaise traps
-  + Phenology of plant species known to be part of passerine diet
+  + Phenology of plant species known to be part of bird diet
   
-Through this data collection and statistical models, I hope to influence avian conservation decisions in the Great Basin, and examine current conservation practices in the context of passerine species.
+
 
 
 
@@ -211,7 +210,7 @@ leaflet() %>%
 
 By building statistical models that examine changes in where birds actually are at different time points in the breeding season, I was able to determine that at least six species of bird are moving elevationally within the breeding season. Why are these birds moving and others are not? Why is driving that movement? 
 
-I tested a total of 25 bird species in the western and central Great Basin sites. Of those 25, I found that 6 species were moving elevationally within their breeding season. Check out the tabs below to view figures that illustrate how site availability (a bird actually using a site) changes both elevationally and temporally (Visit 1 = earliest in the season, Visit 2 = latest in the season)
+I examined a total of 25 bird species in the western and central Great Basin for evidence of within season elevational movement. Of those 25 species, I found evidence of upslope elevational movement in 6 species, and downslope elevational movement in 1 species. Check out the tabs to the right to view figures that illustrate how species' distributions changed over the elevational gradient we examined early to late in the breeding season. 
 
 Row
 ---------------------------------------------------------------------------
@@ -220,7 +219,7 @@ Row
 
 There are multiple hypotheses about why a bird would switch territories within its breeding season. At our sites, I believe within season dispersal is linked to environmental heterogeneity. Environmental heterogeneity means that resources are dispersed across a landscape both spatially and temporally. The environmental heterogeneity hypothesis posits that an individual bird might switch nest sites for a second brood or after an unsuccessful nest to take advantage of more/better resources somewhere else. 
 
-Working in sites with big elevational gradients has allowed me to test this hypothesis. Elevation plays a big role in when in the season a single site will have enough resources for nesting birds. Check out the two pictures below. They are from one of our sites in the western Great Basin, taken just a few weeks apart. In the first picture, taken early in the breeding season, this site is not suitable for most species of birds to nest in. However, just a few weeks later, all the snow has melted and plants are quickly greening up. Could these differences in resource phenology at different elevations drive avian movements? 
+Working in sites with large elevational gradients has allowed me to test this hypothesis. Elevation plays a big role in when in the season a single site will have enough resources for nesting birds. Check out the two pictures below. They are from one of our sites in the western Great Basin, taken just a few weeks apart. In the first picture, taken early in the breeding season, the site is not suitable for most species of birds to nest in. However, just a few weeks later, all the snow has melted and plants are quickly greening up. Could these differences in resource phenology at different elevations drive avian movements? 
 
 ![](img/pheno_VL.JPG)
 
@@ -235,37 +234,53 @@ setwd("../marthazillig.github.io/marthazillig.github.io")
 
 library(tidyverse)
 
-slope_data <- read_csv("/Users/Martha Wohlfeil/Desktop/GitHub Files/marthazillig.github.io/marthazillig.github.io/rmd_files/species_slopes.csv")
+test3 <- read_csv("/Users/Martha Wohlfeil/Desktop/GitHub Files/marthazillig.github.io/marthazillig.github.io/rmd_files/website_figuredata.csv")
 
 ```
 
 
 
-### <small>Vesper Sparrow</small>
+### <small>MacGillivrary's Warbler</small>
 
-Vesper Sparrows move **upslope** in the central Great Basin within the breeding season 
+MacGillivray's Warblers (*Geothlypis tolmiei*) moved **upslope** in the both the western and central Great Basin within the breeding season. This figure shows how their distrubition change in the western sites.  
 
 ```{r}
 library(cowplot)
 library(tidyverse)
+library(scales)
+library(magick)
+
+mgwa <- test3 %>% 
+  filter(sppcode == "MGWA")
 
 
+mgwa1 <- mgwa %>% 
+  filter(`1` >0) %>% 
+  select(elevation, `1`) %>% 
+  mutate(visit = "visit1") %>% 
+  rename(count = `1`)
 
-VESP<- slope_data %>% 
-  filter(Species == "Vesper_Sparrow")
+mgwa3 <- mgwa %>% 
+  filter(`3`>0) %>% 
+  select(elevation, `3`) %>% 
+  mutate(visit = "visit3") %>% 
+  rename(count = `3`)
 
-v1_vesp <- ggplot() + 
-   geom_abline(slope = VESP$V1, intercept = 0) +xlim(0, 3) + ylim(0, 3) + ggtitle("Visit 1") + xlab("Elevation") + ylab("Site Use") +  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
+mgwa_plot <- rbind(mgwa1,  mgwa3)
 
-v2_vesp <- ggplot() + 
-   geom_abline(slope = VESP$V2, intercept = 0) +xlim(0, 3) + ylim(0, 3) + ggtitle("Visit 2") + xlab("Elevation") + ylab("Site Use") +  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
+mgwa_plot <- ggplot(mgwa_plot, aes(x=elevation, color=visit, fill = visit)) + 
+  geom_histogram(aes(y=..density..), alpha=0.5, 
+                 position= "dodge2", binwidth = 100)+
+  geom_density(alpha= .1, size = 1) +
+  xlab("Elevation") + ylab("Density") +
+  ggtitle("Elevational Distrubition of MacGillivray's Warber") +
+  scale_fill_discrete(name = "Time in Season", labels = c("Early", "Late"))+
+  scale_color_discrete(guide = "none") +
+  theme_bw()
 
-v3_vesp <- ggplot() + 
-   geom_abline(slope = VESP$V3, intercept = 0) +xlim(0, 3) + ylim(0, 3) + ggtitle("Visit 3") + xlab("Elevation") + ylab("Site Use") +  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
+mgwa_pic <- ggdraw()+ draw_image("marthazillig.github.io/img/mgwa.jpg", scale = 0.8)
 
-vesp_pic <- ggdraw()+ draw_image("marthazillig.github.io/img/brsp.jpg", scale = 0.8)
-
-cowplot::plot_grid(v1_vesp, v2_vesp, v3_vesp, NULL, vesp_pic, ncol = 3, nrow =2)
+plot_grid(mgwa_plot, mgwa_pic, ncol = 1, nrow =2, rel_heights = c(2,1))
 
 ```
 
@@ -273,126 +288,138 @@ cowplot::plot_grid(v1_vesp, v2_vesp, v3_vesp, NULL, vesp_pic, ncol = 3, nrow =2)
 
 ### <small>Green-Tailed Towhee</small>
 
-Green-tailed Towhees move **downslope** in the western Great Basin within the breeding season. 
+Green-tailed Towhees (*Pipilo chlorurus*) move **downslope** in the western Great Basin within the breeding season--although the distance was quite small. 
 
 
 ```{r}
 
 
 
-GTTO <- slope_data %>% 
-  filter(Species == "Green-tailed_Towhee")
+library(cowplot)
+library(tidyverse)
+library(scales)
+library(magick)
 
-v1_gtto <- ggplot() + 
-   geom_abline(slope = GTTO$V1, intercept = 0) +xlim(0, 3) + ylim(-2, 0) + ggtitle("Visit 1") + xlab("Elevation") + ylab("Site Use") +  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
+gtto <- test3 %>% 
+  filter(sppcode == "GTTO")
 
-v2_gtto <- ggplot() + 
-   geom_abline(slope = GTTO$V2, intercept = 0) +xlim(0, 3) + ylim(-2,0) + ggtitle("Visit 2") + xlab("Elevation") + ylab("Site Use") +  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
 
-v3_gtto <- ggplot() + 
-   geom_abline(slope = GTTO$V3, intercept = 0) +xlim(0, 3) + ylim(-2,0) + ggtitle("Visit 3") + xlab("Elevation") + ylab("Site Use") +  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
+gtto1 <- gtto %>% 
+  filter(`1` >0) %>% 
+  select(elevation, `1`) %>% 
+  mutate(visit = "visit1") %>% 
+  rename(count = `1`)
+
+gtto3 <- gtto %>% 
+  filter(`3`>0) %>% 
+  select(elevation, `3`) %>% 
+  mutate(visit = "visit3") %>% 
+  rename(count = `3`)
+
+gtto_plot <- rbind(gtto1,  gtto3)
+
+gtto_plot <- ggplot(gtto_plot, aes(x=elevation, color=visit, fill = visit)) + 
+  geom_histogram(aes(y=..density..), alpha=0.5, 
+                 position= "dodge2", binwidth = 100)+
+  geom_density(alpha= .1, size = 1) +
+  xlab("Elevation") + ylab("Density") +
+  ggtitle("Elevational Distrubition of Green-tailed Towhee") +
+  scale_fill_discrete(name = "Time in Season", labels = c("Early", "Late"))+
+  scale_color_discrete(guide = "none") +
+  theme_bw()
 
 gtto_pic <- ggdraw()+ draw_image("marthazillig.github.io/img/gtto.jpg", scale = 0.8)
 
-plot_grid(v1_gtto, v2_gtto, v3_gtto, NULL, gtto_pic, ncol = 3, nrow =2)
+plot_grid(gtto_plot, gtto_pic, ncol = 1, nrow =2, rel_heights = c(2,1))
 
 ```
 
-### <small>Broad-tailed Hummingbird</small>
+### <small>Lazuli Bunting</small>
 
-Broad-tailed Hummingbirds move **upslope** in the central Great Basin within the breeding season 
+Lazuli Buntings (*Passerina amoena*) in the western Great Basin displayed one of the strongest signals of **upslope** elevational movement within the breeding season of any species we examined. 
 
 ```{r}
 
-BTAH <- slope_data %>% 
-  filter(Species == "Broad-tailed_Hummingbird")
+library(cowplot)
+library(tidyverse)
+library(scales)
+library(magick)
 
-v1_btah <- ggplot() + 
-   geom_abline(slope = BTAH$V1, intercept = 0) +xlim(0, 3) + ylim(0,3) + ggtitle("Visit 1") + xlab("Elevation") + ylab("Site Use") +  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
-
-v2_btah <- ggplot() + 
-   geom_abline(slope = BTAH$V2, intercept = 0) +xlim(0, 3) + ylim(0,3) + ggtitle("Visit 2") + xlab("Elevation") + ylab("Site Use") +  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
-
-v3_btah <- ggplot() + 
-   geom_abline(slope = BTAH$V3, intercept = 0) +xlim(0, 3) + ylim(0,3) + ggtitle("Visit 3") + xlab("Elevation") + ylab("Site Use") +  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
-
-btah_pic <- ggdraw()+ draw_image("marthazillig.github.io/img/btah.jpg", scale = 0.8)
-
-plot_grid(v1_btah, v2_btah, v3_btah, NULL, btah_pic, ncol = 3, nrow =2)
-
-```
-
-### <small>MacGillivray's Warbler</small>
-
-In both the western and central Great Basin, MacGillivray's Warblers move **upslope** within the breeding season. This figure is the slopes of the western Great Basin model output. 
-```{r}
+lazb <- test3 %>% 
+  filter(sppcode == "LAZB")
 
 
-MGWA <- slope_data %>% 
-  filter(Species == "MacGillivray's_Warbler") %>% 
-  filter(Region == "Western")
+lazb1 <- lazb %>% 
+  filter(`1` >0) %>% 
+  select(elevation, `1`) %>% 
+  mutate(visit = "visit1") %>% 
+  rename(count = `1`)
 
-v1_mgwa <- ggplot() + 
-   geom_abline(slope = MGWA$V1, intercept = 0) +xlim(0, 3) + ylim(0,3) + ggtitle("Visit 1") + xlab("Elevation") + ylab("Site Use") +  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
+lazb3 <- lazb %>% 
+  filter(`3`>0) %>% 
+  select(elevation, `3`) %>% 
+  mutate(visit = "visit3") %>% 
+  rename(count = `3`)
 
-v2_mgwa <- ggplot() + 
-   geom_abline(slope = MGWA$V2, intercept = 0) +xlim(0, 3) + ylim(0,3) + ggtitle("Visit 2") + xlab("Elevation") + ylab("Site Use") +  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
+lazb_plot <- rbind(lazb1,  lazb3)
 
-v3_mgwa <- ggplot() + 
-   geom_abline(slope = MGWA$V3, intercept = 0) +xlim(0, 3) + ylim(0,3) + ggtitle("Visit 3") + xlab("Elevation") + ylab("Site Use") +  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
+lazb_plot <- ggplot(lazb_plot, aes(x=elevation, color=visit, fill = visit)) + 
+  geom_histogram(aes(y=..density..), alpha=0.5, 
+                 position= "dodge2", binwidth = 100)+
+  geom_density(alpha= .1, size = 1) +
+  xlab("Elevation") + ylab("Density") +
+  ggtitle("Elevational Distrubition of Lazuli Buntings") +
+  scale_fill_discrete(name = "Time in Season", labels = c("Early", "Late"))+
+  scale_color_discrete(guide = "none") +
+  theme_bw()
 
-mgwa_pic <- ggdraw()+ draw_image("marthazillig.github.io/img/mgwa.jpg", scale = 0.8)
+lazb_pic <- ggdraw()+ draw_image("marthazillig.github.io/img/lazb.jpg", scale = 0.8)
 
-plot_grid(v1_mgwa, v2_mgwa, v3_mgwa, NULL, mgwa_pic, ncol = 3, nrow =2)
+plot_grid(lazb_plot, lazb_pic, ncol = 1, nrow =2, rel_heights = c(2,1))
 
 ```
 
 ### <small>Brewer's Sparrow</small>
 
-Brewer's Sparrows move **upslope** within the breeding season in the western Great Basin 
-
+In both the western Great Basin, Brewer's Sparrows (*Spizella breweri*) moved **upslope** within the breeding season. 
 ```{r}
 
+library(cowplot)
+library(tidyverse)
+library(scales)
+library(magick)
 
-BRSP <- slope_data %>% 
-  filter(Species == "Brewer's_Sparrow")
+brsp <- test3 %>% 
+  filter(sppcode == "BRSP")
 
-v1_brsp <- ggplot() + 
-   geom_abline(slope = BRSP$V1, intercept = 0) +xlim(0, 3) + ylim(0,3) + ggtitle("Visit 1") + xlab("Elevation") + ylab("Site Use") +  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
 
-v2_brsp <- ggplot() + 
-   geom_abline(slope = BRSP$V2, intercept = 0) +xlim(0, 3) + ylim(0,3) + ggtitle("Visit 2") + xlab("Elevation") + ylab("Site Use") +  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
+brsp1 <- brsp %>% 
+  filter(`1` >0) %>% 
+  select(elevation, `1`) %>% 
+  mutate(visit = "visit1") %>% 
+  rename(count = `1`)
 
-v3_brsp <- ggplot() + 
-   geom_abline(slope = BRSP$V3, intercept = 0) +xlim(0, 3) + ylim(0,3) + ggtitle("Visit 3") + xlab("Elevation") + ylab("Site Use") +  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
+brsp3 <- brsp %>% 
+  filter(`3`>0) %>% 
+  select(elevation, `3`) %>% 
+  mutate(visit = "visit3") %>% 
+  rename(count = `3`)
 
-brsp_pic <- ggdraw()+ draw_image("marthazillig.github.io/img/brsp2.jpg", scale = 0.8)
+brsp_plot <- rbind(brsp1,  brsp3)
 
-plot_grid(v1_brsp, v2_brsp, v3_brsp, NULL, brsp_pic, ncol = 3, nrow =2)
+brsp_plot <- ggplot(brsp_plot, aes(x=elevation, color=visit, fill = visit)) + 
+  geom_histogram(aes(y=..density..), alpha=0.5, 
+                 position= "dodge2", binwidth = 100)+
+  geom_density(alpha= .1, size = 1) +
+  xlab("Elevation") + ylab("Density") +
+  ggtitle("Elevational Distrubition of Brewer's Sparrow") +
+  scale_fill_discrete(name = "Time in Season", labels = c("Early", "Late"))+
+  scale_color_discrete(guide = "none") +
+  theme_bw()
+
+brsp_pic <- ggdraw()+ draw_image("marthazillig.github.io/img/brsp.jpg", scale = 0.8)
+
+plot_grid(brsp_plot, brsp_pic, ncol = 1, nrow =2, rel_heights = c(2,1))
 
 ```
 
-### <small>Yellow Warbler</small>
-
-Yellow Warblers move **upslope** within the breeding season in the central Great Basin. 
-
-```{r}
-
-
-YEWA <- slope_data %>% 
-  filter(Species == "Yellow_Warbler") 
-
-v1_yewa <- ggplot() + 
-   geom_abline(slope = YEWA$V1, intercept = 0) +xlim(0, 3) + ylim(0,3) + ggtitle("Visit 1") + xlab("Elevation") + ylab("Site Use") +  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
-
-v2_yewa <- ggplot() + 
-   geom_abline(slope = YEWA$V2, intercept = 0) +xlim(0, 3) + ylim(0,3) + ggtitle("Visit 2") + xlab("Elevation") + ylab("Site Use") +  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
-
-v3_yewa <- ggplot() + 
-   geom_abline(slope = YEWA$V3, intercept = 0) +xlim(0, 3) + ylim(0,3) + ggtitle("Visit 3") + xlab("Elevation") + ylab("Site Use") +  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
-
-yewa_pic <- ggdraw()+ draw_image("marthazillig.github.io/img/yewa.jpg", scale = 0.8)
-
-plot_grid(v1_yewa, v2_yewa, v3_yewa, NULL, yewa_pic, ncol = 3, nrow =2)
-
-```
