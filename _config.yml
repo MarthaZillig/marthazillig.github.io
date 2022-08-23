@@ -1,13 +1,13 @@
 # --- General options --- #
 
 # Name of website
-title: Avian Ecology in the Great Basin
+title: Martha W. Zillig  
 bigimg: [{src: "/img/banner1.jpg", desc: "Eastern Sierra Nevada Mountains"}]
 
 # Short description of your site
 url: "http://marthazillig.github.io"
 baseurl: ""
-description: A blog about birds, biogeography, and mountains
+description: Quantitative conservation ecology in the western US
 
 
 
