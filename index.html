@@ -1,78 +1,230 @@
----
-layout: page
-title: Martha W. Zillig
-subtitle: Quantitative conservation ecology in the Western US
-use-site-title: true
-bigimg:
-  - "/img/banner1.JPG" : "View from campsite, Virginia Lakes, Sierra Nevada (2017)"
-  - "/img/GB_22.jpg" : "Flowering bitterbrush in the western Great Basin (Cooper Dodds, 2019)"
-  - "/img/sunrise.JPG" : "Sunrise over Little Antelope Canyon, Sierra Nevada (2016)"
-  - "/img/little_ant.JPG" : "Little Antelope, Eastern Sierra Nevada (2017)"
-  - "/img/GB_10.jpg" : "Western Great Basin site (Cooper Dodds, 2019)"
----
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Martha Zillig | Quantitative Ecology Lab</title>
+<meta name="description" content="Martha Zillig's research lab — quantitative ecology and ornithology, spanning bird population dynamics, movement, and conservation.">
+<meta property="og:title" content="Martha Zillig | Quantitative Ecology Lab">
+<meta property="og:description" content="Quantitative ecology and ornithology research — projects, publications, and data.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
 
-<div class="posts-list">
-  {% for post in paginator.posts %}
-  <article class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-	  <h2 class="post-title">{{ post.title }}</h2>
-
-	  {% if post.subtitle %}
-	  <h3 class="post-subtitle">
-	    {{ post.subtitle }}
-	  </h3>
-	  {% endif %}
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M16 4 C10 8 6 16 6 26" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M16 4 C22 8 26 16 26 26" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="9" y1="22" x2="9" y2="26" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="13" y1="18" x2="13" y2="26" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="17" y1="12" x2="17" y2="26" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="21" y1="16" x2="21" y2="26" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <span>Martha Zillig<span class="brand-role">Quantitative Ecology Lab</span></span>
     </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="people.html">People</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="links.html">Links</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <p class="post-meta">
-      Posted on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
+<main>
 
-    <div class="post-entry-container">
-      {% if post.image %}
-      <div class="post-image">
-        <a href="{{ post.url | prepend: site.baseurl }}">
-          <img src="{{ post.image }}">
+  <section class="hero">
+    <div class="container">
+      <div class="hero-copy">
+        <span class="eyebrow">Quantitative Ecology · Ornithology</span>
+        <h1>Reading bird populations through <em>data</em>, not just field notes.</h1>
+        <p class="hero-sub">
+          I'm Martha Zillig, and I lead a research lab combining statistical ecology with
+          field ornithology — building models that turn scattered observations into a clear
+          picture of how bird populations move, persist, and respond to a changing landscape.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="research.html">View Research</a>
+          <a class="btn btn-ghost" href="publications.html">Publications</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="specimen-plate">
+          <span class="plate-corner">FIG. 01</span>
+          <img class="plate-photo" src="assets/img/about-photo.jpg" alt="Martha Zillig in the field">
+          <div class="plate-label">
+            <span>M. Zillig</span>
+            <span>Principal Investigator</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider-feather" role="presentation"></div>
+
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stat">
+        <span class="num">12+</span>
+        <span class="label">Publications</span>
+      </div>
+      <div class="stat">
+        <span class="num">$1.8M</span>
+        <span class="label">Grants Secured</span>
+      </div>
+      <div class="stat">
+        <span class="num">5</span>
+        <span class="label">Active Projects</span>
+      </div>
+      <div class="stat">
+        <span class="num">3</span>
+        <span class="label">Open Datasets</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <img class="about-photo" src="assets/img/about-photo-square.jpg" alt="Martha Zillig">
+      <div>
+        <span class="eyebrow">About</span>
+        <h2>About the Lab</h2>
+        <p>
+          [Replace with your bio.] I'm a quantitative ecologist studying how bird populations
+          respond to environmental change, using statistical models to connect individual
+          movement and demography to landscape-scale patterns. My work sits at the intersection
+          of field ornithology and data science — I spend as much time writing models in R as I
+          do banding birds at dawn.
+        </p>
+        <p>
+          Before starting this lab, I [degree, institution, advisor]. My research has been
+          supported by [funding sources], and I collaborate with [agencies / other labs].
+          Outside of research, I [hobbies — birding trips, illustration, hiking, etc.].
+        </p>
+        <div class="about-links">
+          <a href="https://scholar.google.com/">Google Scholar →</a>
+          <a href="https://orcid.org/">ORCID →</a>
+          <a href="https://github.com/marthazillig">GitHub →</a>
+          <a href="mailto:you@example.edu">Email →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider-feather" role="presentation"></div>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Research</span>
+          <h2>Research Areas</h2>
+          <p class="lede">Population ecology, movement, and conservation — from individual birds to entire flyways.</p>
+        </div>
+        <a class="link-arrow" href="research.html">All Research Projects →</a>
+      </div>
+      <div class="card-grid">
+        <a class="project-card" href="research.html#project-one">
+          <div class="card-top">
+            <span class="tag">Population Dynamics</span>
+            <span class="accession">SPP.01</span>
+          </div>
+          <h3>Project Title One</h3>
+          <p>One or two sentences describing this project — the species, the question, and why it matters.</p>
+          <span class="card-link">Read more →</span>
+        </a>
+        <a class="project-card" href="research.html#project-two">
+          <div class="card-top">
+            <span class="tag">Movement Ecology</span>
+            <span class="accession">SPP.02</span>
+          </div>
+          <h3>Project Title Two</h3>
+          <p>One or two sentences describing this project — the species, the question, and why it matters.</p>
+          <span class="card-link">Read more →</span>
+        </a>
+        <a class="project-card" href="research.html#project-three">
+          <div class="card-top">
+            <span class="tag">Conservation</span>
+            <span class="accession">SPP.03</span>
+          </div>
+          <h3>Project Title Three</h3>
+          <p>One or two sentences describing this project — the species, the question, and why it matters.</p>
+          <span class="card-link">Read more →</span>
         </a>
       </div>
-      {% endif %}
-      <div class="post-entry">
-        {{ post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
-        {% assign excerpt_word_count = post.excerpt | number_of_words %}
-        {% if post.content != post.excerpt or excerpt_word_count > site.excerpt_length %}
-          <a href="{{ post.url | prepend: site.baseurl }}" class="post-read-more">[Read&nbsp;More]</a>
-        {% endif %}
+    </div>
+  </section>
+
+  <div class="divider-feather" role="presentation"></div>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Publications</span>
+          <h2>Recent Publications</h2>
+        </div>
+        <a class="link-arrow" href="publications.html">All Publications →</a>
+      </div>
+
+      <div class="pub-entry">
+        <div>
+          <p class="pub-authors"><strong>Zillig, M.</strong>, Coauthor, A., &amp; Coauthor, B.</p>
+          <p class="pub-title">Title of most recent publication goes here</p>
+          <p class="pub-venue">Journal Name, Year</p>
+        </div>
+        <div class="pub-links">
+          <a href="assets/pdfs/example-publication.pdf">PDF ↓</a>
+          <a href="#">DOI →</a>
+        </div>
+      </div>
+
+      <div class="pub-entry">
+        <div>
+          <p class="pub-authors">Coauthor, A., <strong>Zillig, M.</strong>, &amp; Coauthor, C.</p>
+          <p class="pub-title">Title of second publication goes here</p>
+          <p class="pub-venue">Journal Name, Year</p>
+        </div>
+        <div class="pub-links">
+          <a href="assets/pdfs/example-publication.pdf">PDF ↓</a>
+          <a href="#">DOI →</a>
+        </div>
       </div>
     </div>
+  </section>
 
-    {% if post.tags.size > 0 %}
-    <div class="blog-tags">
-      Tags:
-      {% if site.link-tags %}
-      {% for tag in post.tags %}
-      <a href="{{ site.baseurl }}/tags#{{- tag -}}">{{- tag -}}</a>
-      {% endfor %}
-      {% else %}
-        {{ post.tags | join: ", " }}
-      {% endif %}
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Martha Zillig</div>
+        <div class="footer-tagline">Quantitative Ecology Lab</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="https://github.com/marthazillig">GitHub</a></li>
+        <li><a href="https://scholar.google.com/">Google Scholar</a></li>
+        <li><a href="mailto:you@example.edu">Contact</a></li>
+      </ul>
     </div>
-    {% endif %}
+    <div class="footer-bottom">
+      <span>© 2026 Martha Zillig</span>
+      <span>Built and hosted on GitHub Pages</span>
+    </div>
+  </div>
+</footer>
 
-   </article>
-  {% endfor %}
-</div>
-
-{% if paginator.total_pages > 1 %}
-<ul class="pager main-pager">
-  {% if paginator.previous_page %}
-  <li class="previous">
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-  </li>
-  {% endif %}
-  {% if paginator.next_page %}
-  <li class="next">
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-  </li>
-  {% endif %}
-</ul>
-{% endif %}
+<script src="assets/js/main.js"></script>
+</body>
+</html>
